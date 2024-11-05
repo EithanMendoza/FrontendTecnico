@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../controllers/navbarT';
-import Footer from '../controllers/footer';
+import Footer from '../controllers/Footer';
 
 const TermsAndConditions = () => {
   return (
