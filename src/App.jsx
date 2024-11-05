@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPageT from './components/LandingPageT';
 import LoginT from './components/LoginT';
 import RegisterT from './components/RegisterT';
-import PaginaPrincipalT from './components/paginaprincipalT';
+import PaginaPrincipalT from './components/PaginaPrincipalT';
 import Services from './components/Services';
 import PerfilT from './components/PerfilT';
 import UpdateService from './components/UpdateService';
