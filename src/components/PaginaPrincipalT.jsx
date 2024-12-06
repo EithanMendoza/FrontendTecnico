@@ -17,6 +17,35 @@ const PaginaPrincipalT = () => {
   const [confirmacionServicio, setConfirmacionServicio] = useState(null); // Update 1
   const navigate = useNavigate();
 
+  const servicios = [
+    {
+      nombre_servicio: 'Mantenimiento de aires acondicionados',
+      descripcion: 'Servicio de mantenimiento general de aires acondicionados.',
+      imagenUrl: 'https://st5.depositphotos.com/62628780/63430/i/450/depositphotos_634302062-stock-photo-air-conditioning-technician-engineer-roof.jpg',
+    },
+    {
+      nombre_servicio: 'Reparación de aires acondicionados',
+      descripcion: 'Reparación de fallas y componentes en aires acondicionados.',
+      imagenUrl: 'https://www.davofrio.com/wp-content/uploads/2021/08/mantenimiento-de-aire-acondicionado.png',
+    },
+    {
+      nombre_servicio: 'Limpieza de refrigeradores',
+      descripcion: 'Limpieza profunda y mantenimiento de refrigeradores.',
+      imagenUrl: 'https://aprende.com/wp-content/uploads/2022/09/cuales-son-las-posibles-fallas-de-un-refrigerador-que-no-enfria.jpg',
+    },
+    {
+      nombre_servicio: 'Reparación de refrigeradores',
+      descripcion: 'Reparación de fallas y componentes en refrigeradores.',
+      imagenUrl: 'https://electro.homewashperu.com/wp-content/uploads/2019/07/refri-02.jpg',
+    },
+  ];
+  
+  // Esta función obtiene la URL de la imagen correspondiente a la solicitud
+  const getImagenUrl = (nombreServicio) => {
+    const servicio = servicios.find(s => s.nombre_servicio === nombreServicio);
+    return servicio ? servicio.imagenUrl : 'https://via.placeholder.com/400x200';
+  };
+
   useEffect(() => {
     if (!isAuthenticated()) {
       navigate('/loginT');
@@ -178,7 +207,7 @@ const PaginaPrincipalT = () => {
                 whileTap={{ scale: 0.98 }}
               >
                 <img
-                  src={solicitud.imagenUrl || 'https://via.placeholder.com/400x200'}
+                  src={getImagenUrl(solicitud.nombre_servicio)}
                   alt={solicitud.nombre_servicio}
                   className="w-full h-48 object-cover"
                 />
